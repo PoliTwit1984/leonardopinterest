@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Image Generator</h1>
+            <p>Generate unique images using Leonardo.ai's Phoenix model and share them on Pinterest</p>
+        </header>
+
+        <main>
+            <section class="prompt-section">
+                <form id="generateForm">
+                    <div class="input-group">
+                        <input type="text" 
+                               id="prompt" 
+                               name="prompt"
+                               placeholder="Enter your image prompt..." 
+                               value="">
+                        <button type="submit" id="generateBtn">Generate Images</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="images-section">
+                <div id="imageGrid" class="image-grid">
+                    <!-- Images will be dynamically added here -->
+                </div>
+            </section>
+
+            <section class="selected-section hidden">
+                <h2>Selected Images</h2>
+                <div id="selectedImages" class="selected-images">
+                    <!-- Selected images will be shown here -->
+                </div>
+                <div class="action-buttons">
+                    <button id="downloadBtn">Download & Pin to Pinterest</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Verify JavaScript is loading
+        console.log('Initial script loaded');
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
